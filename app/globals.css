@@ -210,3 +210,53 @@ figcaption{ margin-top: 0.6rem; font-size: 0.85rem; color: var(--ink-soft); }
   html{ scroll-behavior: auto; }
   .btn{ transition: none; }
 }
+
+/* ---- Reactive signature (glare effect) ---- */
+.signature-mark{
+  --strength: 0;
+  --gx: 50%;
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-signature), cursive;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1;
+  color: var(--ink);
+  cursor: default;
+}
+
+/* Decorative shiny duplicate, laid exactly on top of the real text. */
+.signature-mark::after{
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    100deg,
+    var(--indigo) 0%,
+    var(--indigo) 30%,
+    #ffffff 45%,
+    var(--cochinilla) 55%,
+    var(--indigo) 70%,
+    var(--indigo) 100%
+  );
+  background-size: 220% 100%;
+  background-position: var(--gx) center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: var(--strength);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .signature-mark::after{ display: none; }
+}
+
+.signature-line{
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 1.6rem;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+}
+.cta-copy .signature-mark{ color: #fff; }

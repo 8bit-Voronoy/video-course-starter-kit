@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Signature from "./components/Signature";
 
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
@@ -259,6 +260,9 @@ export default function Home() {
             <a className="btn btn-light" href="mailto:hola@luznortefoto.mx">
               Escríbeme para reservar
             </a>
+            <p className="signature-line">
+              Con cariño, <Signature text="Tu Nombre" />
+            </p>
           </div>
         </section>
       </main>

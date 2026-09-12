@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Inter, Alex_Brush } from "next/font/google";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -17,6 +17,13 @@ const inter = Inter({
   display: "swap",
 });
 
+const signatureFont = Alex_Brush({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-signature",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Fotografía Luz Norte — Retratos de familia, pareja y mascotas",
   description:
@@ -30,7 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${fraunces.variable} ${inter.variable}`}>
+      <body
+        className={`${fraunces.variable} ${inter.variable} ${signatureFont.variable}`}
+      >
         {children}
       </body>
     </html>
