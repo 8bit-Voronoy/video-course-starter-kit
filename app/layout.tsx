@@ -1,33 +1,25 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Alex_Brush } from "next/font/google";
+import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const sora = Sora({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-serif",
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
   display: "swap",
 });
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const signatureFont = Alex_Brush({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-signature",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Fotografía Luz Norte — Retratos de familia, pareja y mascotas",
+  title: "Plantilla de landing — energía y servicios en el hogar",
   description:
-    "Experiencias fotográficas en Oaxaca para familias, parejas y sus mascotas. Sesiones que combinan fotografía con momentos que de verdad importan.",
+    "Plantilla funcional de landing page: toggle interactivo, precios, testimonios y FAQ, lista para reemplazar con tu contenido.",
 };
 
 export default function RootLayout({
@@ -37,9 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body
-        className={`${fraunces.variable} ${inter.variable} ${signatureFont.variable}`}
-      >
+      <body className={`${sora.variable} ${manrope.variable}`}>
         {children}
       </body>
     </html>
