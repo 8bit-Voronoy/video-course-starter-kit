@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Manrope, Sora } from "next/font/google";
+import { Sora, Manrope } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "./components/SmoothScroll";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -17,9 +18,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Plantilla de landing — energía y servicios en el hogar",
+  title: "Starter — scroll effects (GSAP + Lenis + Framer Motion)",
   description:
-    "Plantilla funcional de landing page: toggle interactivo, precios, testimonios y FAQ, lista para reemplazar con tu contenido.",
+    "Starter de Next.js con smooth-scroll, secuencia pinneada por scroll y transiciones animadas, listo para reemplazar con tu contenido.",
 };
 
 export default function RootLayout({
@@ -30,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${sora.variable} ${manrope.variable}`}>
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );
