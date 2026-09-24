@@ -1,6 +1,5 @@
 {
   "name": "landing0linktree",
-  "services": [
-    { "binding": "WORKER_SELF_REFERENCE", "service": "landing0linktree" }
-  ]
+  "compatibility_date": "2026-09-21",
+  "main": "src/index.ts"
 }
