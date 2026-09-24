@@ -1,0 +1,6 @@
+{
+  "name": "landing0linktree",
+  "services": [
+    { "binding": "WORKER_SELF_REFERENCE", "service": "starter-scroll-fx" }
+  ]
+}
